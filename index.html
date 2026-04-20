@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анна - Провідниця Духовного Шляху</title>
+    
+    <!-- SEO META TAGS -->
+    <meta name="description" content="Анна - досвідчений таролог. Допомога в коханні, магія багатства, очищення та захист. Послуги 24/7. +48 574 209 397">
+    <meta name="keywords" content="таролог, таро, магія, очищення, захист, допомога в коканні">
+    <meta name="author" content="Анна - Таролог">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Анна - Провідниця Духовного Шляху">
+    <meta property="og:description" content="Досвідчений таролог. Допомога в коканні, магія багатства, очищення та захист. 24/7">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:image" content="https://your-domain.com/images/tarolog.jpg">
+    
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Анна - Таролог">
+    <meta name="twitter:description" content="Послуги таролога 24/7">
+    
+    <meta name="theme-color" content="#5a3b7e">
+    <link rel="canonical" href="https://your-domain.com/">
+    <link rel="icon" type="image/x-icon" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- LANGUAGE SELECTION MODAL -->
+    <div class="language-modal" id="languageModal">
+        <div class="language-modal__content">
+            <h2 class="language-modal__title" id="modalTitle">Виберіть мову</h2>
+            <p class="language-modal__subtitle" id="modalSubtitle">Оберіть мову для отримання кращого досвіду</p>
+            
+            <div class="language-modal__buttons">
+                <button class="language-modal__btn uk-btn" onclick="selectLanguage('uk')">
+                    <span class="language-modal__flag">🇺🇦</span>
+                    <span class="language-modal__name">Українська</span>
+                    <span class="language-modal__full">Ukrainian</span>
+                </button>
+                
+                <button class="language-modal__btn pl-btn" onclick="selectLanguage('pl')">
+                    <span class="language-modal__flag">🇵🇱</span>
+                    <span class="language-modal__name">Polski</span>
+                    <span class="language-modal__full">Polish</span>
+                </button>
+            </div>
+            
+            <p class="language-modal__note" id="modalNote">Ви можете змінити мову пізніше</p>
+        </div>
+        <div class="language-modal__overlay"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__content">
+            <div class="logo">
+                <div class="logo__text">
+                    <p class="logo__title">Досвідчений таролог.</p>
+                    <p class="logo__subtitle">Анна</p>
+                    <div class="hero__time">
+                        <div class="time-badge">
+                            <span class="time-badge__number">24/7</span>
+                            <p class="time-badge__text">Послуги<br>Денно<br>Ночам</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header__contacts">
+                <a href="tel:+48574209397" class="phone">
+                    <span>☎</span>
+                    +48 574 209 397
+                </a>
+                <div class="social">
+                    <a href="#contacts" class="social__link instagram">
+                        <img src="images/instagram.png" alt="instagram">
+                    </a>
+                    <a href="#contacts" class="social__link whatsapp-icon">
+                        <img src="images/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="#contacts" class="social__link telegram-icon">
+                        <img src="images/telegram.png" alt="Telegram">
+                    </a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+        
+        <!-- LANGUAGE SWITCHER -->
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="uk" onclick="setLanguage('uk'); updatePageContent();">
+                🇺🇦 УК
+            </button>
+            <button class="lang-btn" data-lang="pl" onclick="setLanguage('pl'); updatePageContent();">
+                🇵🇱 PL
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="menuClose">✕</button>
+        <div class="mobile-menu__content">
+            <a href="tel:+48574209397" class="mobile-menu__phone">
+                <span>☎</span>
+                +48 574 209 397
+            </a>
+            <div class="mobile-menu__divider"></div>
+            <div class="mobile-menu__social">
+                <a href="https://www.instagram.com/komakhanataliia?igsh=Y3Y0emo3MnV5bTFl" class="mobile-menu__social-link instagram-link">
+                    <img src="images/instagram.png" alt="instagram">
+                </a>
+                <a href="https://wa.me/+48574209397?text=Привіт" class="mobile-menu__social-link whatsapp-link">
+                    <img src="images/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://t.me/@mopsik0" class="mobile-menu__social-link telegram-link">
+                    <img src="images/telegram.png" alt="Telegram">
+                </a>
+            </div>
+            <div class="mobile-menu__divider"></div>
+            <a href="#contacts" class="mobile-menu__link">Контакти</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">Ласкаво просимо на шлях змін</h1>
+            <p class="hero__intro-text">
+                Я допомагаю людям знаходити відповіді, відновлювати внутрішній баланс і відкривати нові можливості у житті.
+                Якщо ви відчуваєте, що зайшли в глухий кут, втратили напрямок або потребуєте підтримки — ви вже зробили перший крок, опинившись тут.
+            </p>
+        </div>
+
+        <a href="#contacts" class="chat-icon">
+            <span>💬</span>
+        </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Про мене</h2>
+            <div class="about__content">
+                <img src="images/tarolog.jpg" alt="Анна" class="about__image">
+                <div class="about__text">
+                    <p>Мене звати Анна.</p>
+                    <p>Я практикую духовні та енергетичні практики, спрямовані на гармонізацію життя, зняття внутрішніх блоків і розкриття потенціалу людини.</p>
+                    <p>Мій шлях почався з особистого пошуку відповідей і трансформації власного життя. З часом знання та досвід стали інструментом допомоги іншим людям.</p>
+                    <p>Я працюю делікатно, без осуду та тиску. Для мене важливо не просто провести обряд, а допомогти вам відчути впевненість, ясність і внутрішню опору.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Послуги</h2>
+            <p class="services__intro">
+                Я працюю індивідуально з кожним запитом:
+            </p>
+            
+            <!-- FIRST ROW - 6 SERVICES -->
+            <div class="services__grid" id="servicesGrid">
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/love.jpg" alt="кохання">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">💖Допомога в коханні💖</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                       відновлення емоційного балансу у стосунках<br><br>
+                     зняття негативного впливу, ревнощів і внутрішніх страхів<br>
+                     допомога після розривів, зрад та складних періодів<br><br>
+                     молитовна підтримка для гармонії та взаєморозуміння<br><br>
+                     пошук причин труднощів у особистому житті
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/rich.png" alt="багатства">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">💵Магія багатства💵</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                        усунення внутрішніх бар'єрів, що заважають достатку<br><br>
+                        очищення від негативних установок щодо грошей<br><br>
+                        налаштування на фінансовий розвиток і стабільність<br><br>
+                        молитви та практики для залучення можливостей<br><br>
+                        підтримка у досягненні матеріального балансу
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/clirning.png" alt="захист">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">🛡️Очищення та захист🛡️</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                        очищення від накопиченого негативу та напруги<br><br>
+                        відновлення енергії після складних життєвих подій<br><br>
+                        зміцнення внутрішнього та духовного захисту<br><br>
+                        молитви за здоров'я та душевний спокій<br><br>
+                        допомога у налагодженні стосунків у родині
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/diagnose.png" alt="Діагностика">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">🪬Діагностика на таро🪬</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                       глибокий аналіз ситуації та прихованих причин труднощів<br><br>
+                        визначення енергетичних блоків і їх джерел<br><br>
+                        пошук напрямків для змін і покращення життя<br><br>
+                        підказки щодо правильних рішень<br><br>
+                        оц��нка перспектив і можливостей
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/family.jpg" alt="Сімейні обряди">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">🧑‍🤝‍🧑Сімейні обряди🧑‍🤝‍🧑</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                        відновлення гармонії у сімейних стосунках<br><br>
+                        усунення образ, непорозумінь і напруги<br><br>
+                        молитви за мир і взаємопідтримку в родині<br><br>
+                        допомога у відновленні зв'язку між близькими<br><br>
+                        підтримка для створення міцних і щасливих стосунків
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/candle.jpg" alt="Виливання воском">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">🕯️Виливання воском🕯️ </h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                        очищення від страхів, тривожності та внутрішнього напруження<br><br>
+                        зняття емоційного та енергетичного перевантаження<br><br>
+                        відновлення після складних періодів і виснаження<br><br>
+                        гармонізація стану душі та тіла<br><br>
+                        покращення загального самопочуття
+                    </p>
+                </div>
+            </div>
+
+            <!-- SEPARATOR LINE AND EXPAND BUTTON -->
+            <div class="services__separator">
+                <div class="separator-line"></div>
+                <button class="expand-button" id="expandBtn">
+                    <span class="expand-arrow">▼</span>
+                </button>
+                <div class="separator-line"></div>
+            </div>
+
+            <!-- HIDDEN SERVICES (4 MORE) -->
+            <div class="services__grid services__grid--hidden" id="hiddenServices">
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/rune.jpg" alt="Ворожіння та передбачення">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">🎴Ворожіння та передбачення🎴</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                        аналіз життєвих подій і можливих сценаріїв<br><br>
+                        визначення перспектив розвитку ситуації<br><br>
+                        прогнозування майбутніх змін<br><br>
+                        рекомендації для прийняття рішень<br><br>
+                        допомога у виборі правильного шляху
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/egg.png" alt="Викатка яйцем">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">🥚Викатка яйцем🥚</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                        індивідуальний підхід до кожної ситуації<br><br>
+                        очищення від негативних впливів і переживань<br><br>
+                        відновлення внутрішньої рівноваги<br><br>
+                        поради для подальших дій<br><br>
+                        підтримка у складних життєвих моментах
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/lead.jpg" alt="Чистка свинцем">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">🧲Чистка свинцем🧲</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">
+                        діагностика загального енергетичного стану<br><br>
+                        виявлення джерел внутрішнього дискомфорту<br><br>
+                        очищення та відновлення енергетичного балансу<br><br>
+                        гармонізація внутрішнього стану<br><br>
+                        захисні практики від негативного впливу
+                    </p>
+                </div>
+
+                 <div class="service-card">
+                    <div class="service-card__image">
+                        <div class="circle-image">
+                            <img src="images/salt.jpg" alt="Сіль для очищення">
+                        </div>
+                    </div>
+                    <h3 class="service-card__title">🧂Сіль для очищення🧂</h3>
+                    <div class="service-card__decoration"></div>
+                    <p class="service-card__text">❗на замовлення❗<br><br>
+                        Очищувальна сіль, виготовлена індивідуально під замовлення.<br><br>
+                        зняття внутрішньої напруги, тривоги та емоційного виснаження<br><br>
+                        гармонізація енергетичного стану та відновлення балансу<br><br>
+                        покращення самопочуття та внутрішнього спокою<br><br>
+                        захист від подальшого негативного впливу
+                    </p>
+                </div>
+
+            </div>
+            <p class="services__disclaimer">
+                *Результат залежить від особистих обставин. Також він не замінює медичне лікування, якщо його рекомендував ваш лікар.
+            </p>
+        </div>
+    </section>
+
+    <!-- MAGIC HELP SECTION -->
+    <section class="magic-help">
+        <div class="container">
+            <div class="magic-help__content">
+                <div class="magic-help__decoration">✨🔮✨</div>
+                <h2 class="magic-help__title">МАГІЧНІ ОБРЯДИ<br>БУДЬ-ЯКОЇ СКЛАДНОСТІ</h2>
+                <p class="magic-help__subtitle">Я працюю з різними ситуаціями — від простих життєвих труднощів до складних випадків, де потрібен глибокий енергетичний вплив.</p>
+
+                <div class="magic-help__frame">
+                    <div class="magic-help__text-block">
+                        <p>
+                            Я не розглядаю звернення з негативним або розважальним підтекстом, на кшталт: «що на мене чекає завтра» чи подібні питання без реальної потреби.
+                             Я працюю лише з людьми, які дійсно потребують допомоги та стикаються з життєвими труднощами, а не шукають розваги.
+                        </p>
+
+                        <p>
+                           Моя діяльність є безпечною — вона не шкодить ні вам, ні оточуючим. Я надаю підтримку у складних та заплутаних життєвих ситуаціях, де справді потрібна допомога.
+                        </p>
+
+                        <div class="magic-help__restrictions">
+                            <p class="magic-help__restrictions-title">Я НЕ ДОПОМАГАЮ</p>
+                            <ul class="magic-help__list">
+                                <li>🔴 азартними іграми;</li>
+                                <li>💔 лотереями та «легкими виграшами»;</li>
+                                <li>🚫 питаннями, пов'язаними з лікуванням або медичними втручаннями;</li>
+                                <li>⚖️ кримінальними справами та судовими рішеннями;</li>
+                                <li>🔮 політичними прогнозами;</li>
+                                <li>⚽ спортивними прогнозами;</li>
+                                <li>🎯 пошуком коштовностей чи «скарбів».</li>
+                            </ul>
+                        </div>
+
+                        <p class="magic-help__attention">Зверніть увагу:</p>
+
+                        <p>
+                             я не відповідаю на запити, які не мають серйозного підґрунтя або задані з цікавості чи заради розваги. Моя робота спрямована на реальну допомогу людям у складних обставинах.
+                        </p>
+
+                        <div class="magic-help__warning">
+                            <p class="magic-help__warning-title">‼️ДІТЬМИ НЕ ПРАЦЮЮ‼️</p>
+                            <p class="magic-help__warning-age">18+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WARNINGS SECTION -->
+    <section class="warnings">
+        <div class="container">
+            <div class="warnings__content">
+                <div class="warnings__text">
+                    <h2 class="warnings__title">Не відкладайте звернення, якщо:</h2>
+                    <p class="warnings__item">ви опинилися у складній життєвій ситуації та не бачите виходу</p>
+                    <p class="warnings__item">відчуваєте, що все йде не так, як потрібно, і сил боротися майже не залишилось</p>
+                    <p class="warnings__item">здається, що на вас чиниться негативний вплив або тиск ззовні</p>
+                    <p class="warnings__item">тривалий час немає змін на краще, попри всі ваші зусилля</p>
+                    <p class="warnings__item">відчуваєте внутрішню тривогу, страх або незрозумілий емоційний тягар</p>
+                    <p class="warnings__item">не можете відпустити людину з минулого або хочете відновити стосунки</p>
+                    <p class="warnings__item">вже зверталися по допомогу, але результату так і не отримали</p>
+                    
+                    <div class="warnings__support">
+                        <h3 class="warnings__support-title">У таких ситуаціях я не засуджую — я поруч, щоб підтримати.</h3>
+                        <p class="warnings__support-text">
+                            Я уважно вислухаю, розберуся в суті вашої ситуації, за потреби проведу обряд або молитву, допоможу з очищенням, підкажу та направлю.<br>
+                            Навіть коли здається, що вже запізно — вихід завжди є. Адже з вірою, внутрішньою силою та Божою допомогою можливо подолати будь-які труднощі.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS SECTION -->
+    <!-- CONTACTS SECTION -->
+<section class="contacts" id="contacts">
+    <div class="container">
+        <div class="contacts__content">
+            <div class="contacts__left">
+                <h2 class="contacts__title">Контакти</h2>
+                <a href="tel:+48574209397" class="contacts__phone">
+                    <span class="contacts__phone-icon">☎</span>
+                    +48 574 209 397
+                </a>
+                <div class="contacts__social">
+                    <a href="https://www.instagram.com/komakhanataliia?igsh=Y3Y0emo3MnV5bTFl" class="contacts__social-link instagram-link">
+                        <img src="images/instagram.png" alt="instagram" class="contacts__social-icon">
+                    </a>
+                    <a href="https://wa.me/+48574209397?text=Привіт" class="contacts__social-link whatsapp-link">
+                        <img src="images/whatsapp.png" alt="WhatsApp" class="contacts__social-icon">
+                    </a>
+                    <a href="https://t.me/@mopsik0" class="contacts__social-link telegram-link">
+                        <img src="images/telegram.png" alt="Telegram" class="contacts__social-icon">
+                    </a>
+                </div>
+
+                <div class="contacts__tarot-icon">
+                    <img src="images/tarot icon.png" alt="Таро символ">
+                </div>
+
+            </div>
+            <div class="contacts__right">
+                <div class="contacts__form-header">
+                    <p class="contacts__form-quote">🔮 Напишіть свій запит — і я з радістю дам відповідь або допоможу!</p>
+                </div>
+                <form class="contacts__form" id="contactForm" action="https://formspree.io/f/myklwdab" method="POST">
+    <input 
+        type="text" 
+        name="name"
+        class="contacts__input" 
+        placeholder="Ваше ім'я" 
+        required
+    >
+    <input 
+        type="tel" 
+        name="phone"
+        class="contacts__input" 
+        placeholder="Напишіть номер" 
+        required
+    >
+    <input 
+        type="email" 
+        name="email"
+        class="contacts__input" 
+        placeholder="Напишіть email" 
+        required
+    >
+    <select class="contacts__select" name="method" required>
+        <option value="">Спосіб зв'язку</option>
+        <option value="instagram">Instagram</option>
+        <option value="whatsapp">WhatsApp</option>
+        <option value="telegram">Telegram</option>
+        <option value="call">Телефонний дзвінок</option>
+    </select>
+    <textarea 
+        class="contacts__textarea" 
+        name="query"
+        placeholder="Ваш запит" 
+        rows="5"
+        required
+    ></textarea>
+    <button type="submit" class="contacts__button">надіслати</button>
+</form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Анна - Таролог. Всі права захищені.</p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
